@@ -101,7 +101,7 @@
 
             <div class="product-card">
                 <div class="card-image">
-                    <img src="Buket Hemat/1.jpeg" alt="Single Rose" class="product-img">
+                    <img src="Buket Hemat/1.jpeg" alt="Single Rose Fresh" class="product-img">
                 </div>
                 <div class="card-info">
                     <h3 class="product-name">Single Rose Fresh</h3>
@@ -146,7 +146,7 @@
 
             <div class="product-card">
                 <div class="card-image">
-                    <img src="Buket Hemat/6.jpeg" alt="Buket Kawat bulu" class="product-img">
+                    <img src="Buket Hemat/6.jpeg" alt="Buket Kawat Bulu" class="product-img">
                 </div>
                 <div class="card-info">
                     <h3 class="product-name">Buket Kawat Bulu</h3>
@@ -266,7 +266,6 @@
                 </div>
             </div>
 
-            <!-- Modal Zoom Gambar -->
             <div id="imageModal" class="image-modal">
                 <span class="close-modal">&times;</span>
                 <img class="modal-content" id="modalImg">
@@ -281,25 +280,26 @@
 
     <script>
         function kirimKeWA(element) {
-            // Nomor WhatsApp Admin (Ganti dengan nomor yang sesuai)
+            // Nomor WhatsApp Admin (Ganti dengan nomor yang sesuai, format 62...)
             const nomorWA = "6289521001497"; 
 
-            // Mencari elemen kartu produk
+            // Mencari elemen kartu produk terdekat dari tombol yang diklik
             const card = element.closest('.product-card');
 
-            // Mengambil data produk
+            // Mengambil data produk (Nama, Harga, Gambar)
             const namaProduk = card.querySelector('.product-name').innerText;
             const hargaProduk = card.querySelector('.product-price').innerText;
-            const linkGambar = card.querySelector('.product-img').src;
+            const linkGambar = card.querySelector('.product-img').src; // Mengambil URL gambar
 
-            // Membuat pesan
+            // Membuat pesan WhatsApp yang terformat rapi
+            // %0A adalah kode untuk baris baru (Enter) di URL
             const pesan = `Halo Kak admin Bouquet Bysindi, saya mau pesan:%0A%0A` +
                           `*Nama:* ${namaProduk}%0A` +
                           `*Harga:* ${hargaProduk}%0A` +
                           `*Foto Produk:* ${linkGambar}%0A%0A` +
                           `Apakah stok masih tersedia?`;
 
-            // Membuka WhatsApp
+            // Membuka WhatsApp di tab baru
             const url = `https://wa.me/${nomorWA}?text=${pesan}`;
             window.open(url, '_blank');
         }
@@ -328,7 +328,6 @@
         }
     });
     </script>
-
 
 </body>
 </html>
